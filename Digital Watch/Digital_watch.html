@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <title>Digital Watch</title>
+    
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="../fontawesome/css/all.css">
+
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 m-auto">
+                <div class="card">
+                    <div class="card-header bg-primary text-center">
+                        <h2 class="text-white">Digital Watch</h2>
+                    </div>
+                    <div class="card-body bg-light text-center">
+                        <h3>Indian Digital Watch</h3>
+                        <p>Asia/Kolkata</p>
+                        <h1 id="time">Time</h1>
+                        <h4 id="date">Date</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    let timeTag=document.querySelector("#time");
+    let dateTag=document.querySelector("#date");
+
+    function indianTimer()
+    {
+        let dateObj=new Date();
+        let obj={timezone:'Asia/Kolkata'};
+        let currentTime=dateObj.toLocaleTimeString('en-US',obj);
+        timeTag.innerText=currentTime;
+        let currentDate=dateObj.toLocaleDateString('en-US',obj);
+        dateTag.innerText=currentDate;
+    }
+    setInterval(indianTimer,1000);
+</script>
+</body>
+</html>
